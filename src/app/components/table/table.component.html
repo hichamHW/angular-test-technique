@@ -1,0 +1,25 @@
+<div class="row justify-content-center">
+  <div class="col-4">
+    <div class="form-group">
+      <input type="text" class="form-control"  [(ngModel)]="searchText" (keyup)="search()" placeholder="Serach..." id="search" >
+    </div>
+  </div>
+</div>
+<div class="container">
+  <table class="table" matSort (matSortChange)="sortData($event)">
+    <tr>
+      <th mat-sort-header="vin">vin</th>
+      <th mat-sort-header="brand">brand</th>
+      <th mat-sort-header="year">year</th>
+      <th mat-sort-header="color">color</th>
+      <th mat-sort-header="price">price</th>
+    </tr>
+    <tr *ngFor="let car of sortedData1">
+      <td>{{car.vin}}</td>
+      <td>{{car.brand}}</td>
+      <td>{{car.year}}</td>
+      <td>{{car.color}}</td>
+      <td>{{car.price}}</td>
+    </tr>
+  </table>
+</div>
